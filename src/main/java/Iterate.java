@@ -6,7 +6,7 @@ public class Iterate {
 
     public static void main(String[] args) {
 
-        NumberIterator iterator = new NumberIterator(1, 10);
+        NumberIterator iterator = new NumberIterator(-111111, 1000000);
 
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
