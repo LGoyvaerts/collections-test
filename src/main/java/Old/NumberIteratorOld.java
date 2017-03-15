@@ -1,4 +1,4 @@
-package Iterators;
+package Old;
 
 import java.util.Iterator;
 import java.util.Scanner;
@@ -8,7 +8,7 @@ import java.util.TreeSet;
 /**
  * Created by gol on 17.02.2017.
  */
-public class NumberIterator {
+public class NumberIteratorOld {
 
     private static Set<Integer> numbers = new TreeSet<>();
 
