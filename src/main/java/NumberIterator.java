@@ -1,38 +1,34 @@
 import java.util.Iterator;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.NoSuchElementException;
 
 /**
  * Created by gol on 14.03.2017.
  */
-public class NumberIterator implements Iterator {
+public class NumberIterator implements Iterator<Integer> {
 
-    private Set<Integer> numbers = new TreeSet<>();
-    Integer first;
-    Integer second;
-    Integer x = first;
+    private int last;
+    private int next;
 
-    NumberIterator(Iterator iterator) {
-
-    }
-
-    NumberIterator(int first, int second) {
-        this.first = first;
-        this.second = second;
+    NumberIterator(int from, int to) {
+        next = from;
+        last = to;
     }
 
     @Override
     public boolean hasNext() {
-        if (x <= second) {
-            x++;
-            return true;
-        } else {
-            return false;
-        }
+        return next <= last;
     }
 
     @Override
-    public Object next() {
-        return x;
+    public Integer next() {
+
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+//        int next = next;
+//        next++;
+//        return next;
+
+        return next++;
     }
 }
